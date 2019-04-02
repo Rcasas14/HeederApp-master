@@ -33,7 +33,9 @@ export default class JoinScreen extends React.Component {
         }
     }
 render(){
-<View style = {styles.container}>
+
+return (
+    <View style = {styles.container}>
 
     <Form>
         <Item>
@@ -62,6 +64,7 @@ render(){
         </Button>
 
     </View>
+    )
  }
 
 }

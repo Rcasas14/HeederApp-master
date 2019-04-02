@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { StyleSheet, View, Text, SafeAreaView, ScrollView, Dimensions, Image, TouchableOpacity} from 'react-native';
 import { createAppContainer, createDrawerNavigator , createBottomTabNavigator, 
         createSwitchNavigator,createStackNavigator, DrawerItems } from 'react-navigation';
@@ -10,14 +10,15 @@ import Icon from '@expo/vector-icons/Ionicons';
 import { Button } from 'native-base';
 import * as firebase from 'firebase';
 
-class HomeScreen extends React.Component {
+export default class HomeScreen extends React.Component {
 
   onSignoutPress = () => {
-    firebase.auth().signOut().then(() => this.props.navigation.navigate('Login'));
+    //firebase.auth().signOut().then(() => this.props.navigation.navigate('Login'));
+   // onPress = {() => navigate('Login')}
   }
 
   render(){
-    
+    const {navigate} = this.props.navigation;
     return <AppContainer />
     
   }
@@ -31,7 +32,7 @@ const CustomDrawerComponent = (props) => (
     </ScrollView>
     <TouchableOpacity>
       <View style={styles.item}>
-        <Button onPress ={this.onSignoutPress}
+        <Button onPress ={() => navigate('Login')}
         transparent
         style = {{color: '#fff'}}>
           <Text style={styles.label}>Logout</Text>
@@ -119,6 +120,3 @@ const AppSwitchNavigator = createSwitchNavigator({
 
 
 const AppContainer = createAppContainer(AppSwitchNavigator);
-
-
-export default HomeScreen;

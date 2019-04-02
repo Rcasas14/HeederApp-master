@@ -7,6 +7,9 @@ import HomeScreen from './src/screens/HomeScreen';
 import ApiKeys from './ApiKey/ApiKey';
 import * as firebase from 'firebase';
 import Channels from './src/screens/Channels';
+import AddClassScreen from './src/CrudScreens/AddClassScreen';
+import JoinScreen from './src/CrudScreens/JoinNewChannel/JoinScreen';
+import TestChannel from './src/CrudScreens/TestChannel';
 
 
 const Application = createStackNavigator({
@@ -14,6 +17,30 @@ const Application = createStackNavigator({
       screen: Login,
       navigationOptions: {
         title: 'Login',
+        header: null
+      }
+    },
+
+    TestChannel: {
+      screen: TestChannel,
+      navigationOptions: {
+        title: 'TestChannel',
+        header: null
+      }
+    },
+
+    AddClassScreen: {
+      screen: AddClassScreen,
+      navigationOptions: {
+        title: 'AddClassScreen',
+        header: null
+      }
+    },
+
+    JoinScreen: {
+      screen: JoinScreen,
+      navigationOptions: {
+        title: 'JoinScreen',
         header: null
       }
     },

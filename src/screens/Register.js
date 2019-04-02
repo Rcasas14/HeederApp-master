@@ -6,7 +6,7 @@ import * as firebase from 'firebase';
 
 
 
-export default class Login extends React.Component {
+export default class Register extends React.Component {
 
 constructor (props){
   super(props);
@@ -123,9 +123,24 @@ signupUser = (email, password) => {
         onPress={this.signupUser}>
           <Text style={styles.buttonText}>Submit</Text>
         </Button>
-        <Button style = {styles.button}
         
+        <Button style = {styles.button}
         onPress={() => navigate('Login')}>
+          <Text style={styles.buttonText}>Back</Text>
+        </Button>
+
+        <Button style = {styles.button}
+        onPress={() => navigate('AddClassScreen')}>
+          <Text style={styles.buttonText}>Back</Text>
+        </Button>
+
+        <Button style = {styles.button}
+        onPress={() => navigate('JoinScreen')}>
+          <Text style={styles.buttonText}>Back</Text>
+        </Button>
+
+        <Button style = {styles.button}
+        onPress={() => navigate('TestChannel')}>
           <Text style={styles.buttonText}>Back</Text>
         </Button>
       </View>

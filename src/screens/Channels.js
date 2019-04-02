@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Alert } from 'react-native';
 import {Card, CardItem, Button} from 'native-base';
-import AddClassScreen from '../CrudScreens/AddClassScreen';
 import * as firebase from 'firebase';
 
 
@@ -11,6 +10,7 @@ export default class Channels extends React.Component {
     firebase.auth().signOut();
   }
     render() {
+      const {navigate} = this.props.navigation;
         return (
           <View style = {styles.container}>
             {/* <Text>Channel</Text>
@@ -25,10 +25,21 @@ export default class Channels extends React.Component {
             <Card>
               <CardItem>
                 <Button 
-                onPress ={() =>this.props.navigation.navigate('AddClassScreen')}
+                onPress ={() => navigate('AddClassScreen')}
                 transparent
                 primary>
                   <Text>Add Class</Text>
+                </Button>
+              </CardItem>
+            </Card>
+
+            <Card>
+              <CardItem>
+                <Button 
+                onPress ={() => navigate('JoinScreen')}
+                transparent
+                primary>
+                  <Text>sample clasee click to join</Text>
                 </Button>
               </CardItem>
             </Card>

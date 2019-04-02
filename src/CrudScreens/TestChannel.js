@@ -4,9 +4,11 @@ import {StyleSheet, View, Text } from 'react-native';
 export default class TestChannel extends React.Component{
 
     render(){
+        return(
         <View style = {styles.container}>
             <Text>TestChannel</Text>
         </View>
+        )
     }
 }
 
