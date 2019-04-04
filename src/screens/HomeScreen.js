@@ -3,14 +3,18 @@ import { StyleSheet, View, Text, SafeAreaView, ScrollView, Dimensions, Image, To
 import { createAppContainer, createDrawerNavigator , createBottomTabNavigator, 
         createSwitchNavigator,createStackNavigator, DrawerItems } from 'react-navigation';
 import Channels from '../screens/Channels';
-import Settings from '../screens/Settings';
-import Profile from '../screens/Profile';
-//import Logout from '../screens/Logout';
+// import Settings from '../screens/Settings';
+// import Login from '../screens/Login'
+// import Profile from '../screens/Profile';
+import AddClassScreen from '../CrudScreens/AddClassScreen';
 import Icon from '@expo/vector-icons/Ionicons';
 import { Button } from 'native-base';
 import * as firebase from 'firebase';
 
 export default class HomeScreen extends React.Component {
+  static navigationOptions = {
+    header: null
+}
 
   onSignoutPress = () => {
     //firebase.auth().signOut().then(() => this.props.navigation.navigate('Login'));
@@ -18,21 +22,22 @@ export default class HomeScreen extends React.Component {
   }
 
   render(){
-    const {navigate} = this.props.navigation;
+    
     return <AppContainer />
     
   }
 }
 
+
 const CustomDrawerComponent = (props) => (
-  <SafeAreaView style = {{flext: 1}}>
+  <SafeAreaView style = {{flex: 1,}}>
     <ScrollView>
       <View style = {{paddingTop:30}}></View>
       <DrawerItems style = {{backgroundColor:'#35586C'}} {...props} />
     </ScrollView>
     <TouchableOpacity>
       <View style={styles.item}>
-        <Button onPress ={() => navigate('Login')}
+        <Button onPress ={() => this.props.navigation.navigate('Login')}
         transparent
         style = {{color: '#fff'}}>
           <Text style={styles.label}>Logout</Text>
@@ -58,18 +63,18 @@ const TabNavigator = createBottomTabNavigator (
   }
 }, 
   tabBarOptions: {
-    labelStyle: { fontSize: 15, padding: 15, backgroundColor: '#ffffff' },
-    }
+    showLabel: false
+    },
 
 })
 
 const AppStackNavigator = createStackNavigator ({
-  TabNavigator: TabNavigator
+  TabNavigator: TabNavigator 
 },{
   defaultNavigationOptions:({navigation}) => {
     return{
       headerLeft: (
-        <Icon style ={{paddingLeft: 20}}
+        <Icon style ={{paddingLeft: 20, paddingTop: -10}}
          onPress={()=>navigation.openDrawer()}
         name="md-menu" size={30}/>
       )
@@ -79,15 +84,14 @@ const AppStackNavigator = createStackNavigator ({
 
 const AppDrawerNavigator = createDrawerNavigator({
   
-    Profile: {
+    Heeder: {
       screen: AppStackNavigator,
-    }, 
-    Settings: {
-      screen: Settings,
-    }, 
-    Channels: {
-      screen: Channels,
     },
+
+    "Add Class" : {
+      screen: AddClassScreen,
+    
+    }
     
    },{
      contentComponent: CustomDrawerComponent,
@@ -103,7 +107,7 @@ const AppDrawerNavigator = createDrawerNavigator({
     label: {
       margin: 16,
       fontWeight: 'bold',
-      color: 'rgba(0, 0, 0, .87)',
+      color: '#fff',
     },
     iconContainer: {
       marginHorizontal: 16,
@@ -114,7 +118,10 @@ const AppDrawerNavigator = createDrawerNavigator({
  
 
 const AppSwitchNavigator = createSwitchNavigator({
-  Home: { screen: AppDrawerNavigator },
+  Home: { 
+    screen: AppDrawerNavigator,
+    header: null, 
+  },
  
 })
 

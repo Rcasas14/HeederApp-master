@@ -39,39 +39,41 @@ onloginUser = () => {
 
         <Form>
         <Item style={styles.inputBox}
-        rounded
-        floatingLabel>
-        <Label style = {{color: '#fff'}}>Email</Label>
+        rounded>
           <Input
-         value = {this.state.email}
-         autoCorrect = {false}
-         autoCapitalize="none"
-         onChangeText = {(email)=> this.setState({email})}
+            value = {this.state.email}
+            autoCorrect = {false}
+            autoCapitalize="none"
+            placeholder="Email"
+            placeholderTextColor='#fff'
+            onChangeText = {(email)=> this.setState({email})}
+            style = {{color:'#fff'}}
           />
         </Item>
 
         <Item style={styles.inputBox}
-        rounded
-        floatingLabel>
-        <Label style = {{color: '#fff'}}>Password</Label>
+        rounded>
           <Input
-         value = {this.state.password}
-         autoCorrect = {false}
-         autoCapitalize="none"
-         secureTextEntry = {true}
-         onChangeText = {(password) => this.setState({password})}
+            value = {this.state.password}
+            autoCorrect = {false}
+            autoCapitalize="none"
+            secureTextEntry = {true}
+            placeholder="Password"
+            placeholderTextColor='#fff'
+            onChangeText = {(password) => this.setState({password})}
+            style = {{color:'#fff'}}
           />
         </Item>
 
         </Form>
         
-        <Button style = {styles.button}
+      <Button style = {styles.button}
         rounded
         onPress={this.onloginUser}>
           <Text style={styles.buttonText}>Login</Text>
         </Button>
 
-        <Button style = {styles.SignButton} 
+      <Button style = {styles.SignButton} 
         onPress={() => navigate('Register')}
         transparent >
           <Text style={styles.buttonText}>Sign Up</Text>
@@ -85,12 +87,12 @@ onloginUser = () => {
 const styles = StyleSheet.create({
  
     container: {
-        flex: 1,
-        backgroundColor:'#35586C',
-        justifyContent: 'center',
-        alignItems: 'center',
-        paddingLeft: 50,
-        paddingRight: 50
+      flex: 1,
+      backgroundColor:'#35586C',
+      justifyContent: 'center',
+      alignItems: 'center',
+      paddingLeft: 50,
+      paddingRight: 50
     },
     logoContainer: {
       alignItems: 'center',
@@ -120,30 +122,30 @@ const styles = StyleSheet.create({
       marginVertical: 10,
     },
    
-   button: {
-    backgroundColor: '#73B1B7',
-    width: 114,
-    height: 40,
-    marginVertical: 10,
-    marginLeft: 100,
-    textAlign: 'center',
-    justifyContent: 'center'
+    button: {
+      backgroundColor: '#73B1B7',
+      width: 80,
+      height: 30,
+      marginVertical: 10,
+      marginLeft: 100,
+      textAlign: 'center',
+      justifyContent: 'center'
    },
 
-   SignButton:{
-    width: 114,
-    height: 40,
-    marginVertical: 10,
-    marginLeft: 100,
-    color: "#fff", 
-    fontSize: 15, 
-    justifyContent: 'center'
+    SignButton:{
+      width: 80,
+      height: 30,
+      marginVertical: 10,
+      marginLeft: 100,
+      color: "#fff", 
+      fontSize: 15, 
+      justifyContent: 'center'
    
    },
-   buttonText: {
-    justifyContent: 'center',
-    textAlign: 'center',
-    color: "#ffffff", 
+    buttonText: {
+      justifyContent: 'center',
+      textAlign: 'center',
+      color: "#ffffff", 
 
    }
    

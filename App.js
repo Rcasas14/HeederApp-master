@@ -17,7 +17,8 @@ const Application = createStackNavigator({
       screen: Login,
       navigationOptions: {
         title: 'Login',
-        header: null
+        header: null,
+        tabBarVisible: false,
       }
     },
 
@@ -25,7 +26,8 @@ const Application = createStackNavigator({
       screen: TestChannel,
       navigationOptions: {
         title: 'TestChannel',
-        header: null
+        header: null,
+        tabBarVisible: false,
       }
     },
 
@@ -33,7 +35,8 @@ const Application = createStackNavigator({
       screen: AddClassScreen,
       navigationOptions: {
         title: 'AddClassScreen',
-        header: null
+        header: null,
+        tabBarVisible: false,
       }
     },
 
@@ -41,7 +44,8 @@ const Application = createStackNavigator({
       screen: JoinScreen,
       navigationOptions: {
         title: 'JoinScreen',
-        header: null
+        header: null,
+        tabBarVisible: false,
       }
     },
 
@@ -49,7 +53,8 @@ const Application = createStackNavigator({
       screen: Register,
       navigationOptions: {
         title: 'Register',
-        header: null
+        header: null,
+        tabBarVisible: false,
       }
     },
     
@@ -57,15 +62,20 @@ const Application = createStackNavigator({
       screen: Channels,
       navigationOptions: {
         title: 'Channels',
-        header: null
+        header: null,
+        tabBarVisible: false,
+        headerStyle: {
+          backgroundColor: '#35586C',
+        }
       }
     },
-
+ 
     HomeScreen: {
       screen: HomeScreen,
       navigationOptions: {
         title: 'Home',
-        header: null
+        header: null,
+        tabBarVisible: false,
       }
     },
     
@@ -110,7 +120,7 @@ export default class App extends React.Component {
         <View style={styles.container}>
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
           {Platform.OS === 'android' && <View style={styles.statusBarUnderlay} />}
-          {(this.state.isAuthenticated) ? <Channels /> : <Login />}
+          {(this.state.isAuthenticated) ? <Channel /> : <Login />}
         </View>
         
       );

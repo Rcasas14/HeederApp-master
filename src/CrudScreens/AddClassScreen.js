@@ -21,27 +21,30 @@ render(){
     return (
 <View style = {styles.container}>
     <Form>
-        <Item>
+        <Item style = {styles.itemStyle}>
         <InputGroup>
-            <Input
-            value = {this.state.channelName}
-            style = {{color: '#fff'}}
-            autoCapitalize = "none"
-            autoCorrect= {false}>
-            <Text>Name</Text>
-            </Input>
+        
+            <Input floatingLabel
+                value = {this.state.channelName}
+                style = {styles.inputBox}
+                autoCapitalize = "none"
+                autoCorrect= {false}
+                placeholder="Enter Name"
+                placeholderTextColor='#fff'
+                onChangeText = {(channelName) => this.setState({channelName})}/>
+            
         </InputGroup>
         </Item>
 
     </Form> 
-        <Button
+        <Button style = {styles.button}
         //confirm button to add new channel in crud (add function here)
         transparent
         //temporray navigation
         onPress = {() => navigate('Channel')}
         //this channel name will navigate to the newly created channel
         >
-        <Text style={{color:'#fff'}}>Confirm</Text>
+        <Text style={{color:'#fff',}}>Confirm</Text>
         </Button>
 
     </View>
@@ -57,7 +60,30 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingLeft: 50,
         paddingRight: 50,
+    
     },
+    itemStyle: {
+        paddingTop: 120,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    inputBox: {
+        width: 300,
+        height: 45,
+        fontSize: 15,
+        color: '#fff',
+      },
+     
+      button: {
+        backgroundColor: '#73B1B7',
+        width: 80,
+        height: 30,
+        marginVertical: 15,
+        textAlign: 'center',
+        justifyContent: 'center',
+        marginLeft: 18,
+
+     },
    
 
 });

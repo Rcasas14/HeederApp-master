@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StyleSheet, View, Text, Image, Alert} from 'react-native';
+import {StyleSheet, View, ScrollView, Text, Image, Alert} from 'react-native';
 import {Button, Form, Item, Input, floatingLabel, Label} from 'native-base';
 //import {NavigationActions} from 'react-navigation';
 import * as firebase from 'firebase';
@@ -45,106 +45,111 @@ signupUser = (email, password) => {
   render() {
     const { navigate } = this.props.navigation;
       return (
+        
+    // <ScrollView>
       <View style = {styles.container}>
       <View style = {styles.logoContainer}>
-      <Text style = {{color: '#fff'}}>Register</Text>
+      <Text style = {{color: '#fff'}}>Register User</Text>
         
   <Form>
 
-    <Item style={styles.inputBox}
-        floatingLabel>
-        <Label style = {styles.logText}>Name</Label>
+    <Item style={styles.inputBox}>
       <Input
          style = {{color: '#fff'}}
          value = {this.state.name}
          autoCorrect = {false}
          autoCapitalize="none"
+         placeholder="First Name"
+         placeholderTextColor='#fff'
          onChangeText = {(name)=> this.setState({name})}
           />
     </Item>
 
-    <Item style={styles.inputBox}
-        
-        floatingLabel>
-        <Label style = {styles.logText}>Last Name</Label>
+    <Item style={styles.inputBox}>
       <Input
          style = {{color: '#fff'}}
          value = {this.state.lastName}
          autoCorrect = {false}
          autoCapitalize="none"
+         placeholder="Last Name"
+         placeholderTextColor='#fff'
          onChangeText = {(lastName)=> this.setState({lastName})}
           />
     </Item>
 
 
-    <Item style={styles.inputBox}
-        
-        floatingLabel>
-        <Label style = {styles.logText}>Email</Label>
-      <Input
-         style = {{color: '#fff'}}
-         value = {this.state.email}
-         autoCorrect = {false}
-         autoCapitalize="none"
-         onChangeText = {(email)=> this.setState({email})}
-          />
-    </Item>
-
-    <Item style={styles.inputBox}
-        
-        floatingLabel>
-        <Label style = {styles.logText}>Password</Label>
-          <Input
-         value = {this.state.password}
-         autoCorrect = {false}
-         autoCapitalize="none"
-         secureTextEntry = {true}
-         onChangeText = {(password) => this.setState({password})}
-          />
-    </Item>
-
-    <Item style={styles.inputBox}
-        
-        floatingLabel>
-        <Label style = {styles.logText}>Confirm Password</Label>
+    <Item style={styles.inputBox}>
         <Input
-         style = {{color: '#fff'}}
-         autoCorrect = {false}
-         autoCapitalize="none"
-         secureTextEntry = {true}
-        onChangeText = {(ConfirmPassword) => this.setState({ConfirmPassword})}
+          style = {{color: '#fff'}}
+          value = {this.state.email}
+          autoCorrect = {false}
+          autoCapitalize="none"
+          placeholder="Email"
+          placeholderTextColor='#fff'
+          onChangeText = {(email)=> this.setState({email})}
+          />
+    </Item>
+
+    <Item style={styles.inputBox}>
+          <Input
+            style = {{color: '#fff'}}
+            value = {this.state.password}
+            autoCorrect = {false}
+            autoCapitalize="none"
+            secureTextEntry = {true}
+            placeholder="Password"
+            placeholderTextColor='#fff'
+            onChangeText = {(password) => this.setState({password})}
+          />
+    </Item>
+
+    <Item style={styles.inputBox}>
+          <Input
+            style = {{color: '#fff'}}
+            value = {this.state.ConfirmPassword}
+            autoCorrect = {false}
+            autoCapitalize="none"
+            secureTextEntry = {true}
+            placeholder="Confirm Password"
+            placeholderTextColor='#fff'
+            onChangeText = {(ConfirmPassword) => this.setState({ConfirmPassword})}
           />
     </Item>
 
   </Form>
         
         <Button style = {styles.button}
-        
-        onPress={this.signupUser}>
+          rounded
+          onPress={this.signupUser}>
           <Text style={styles.buttonText}>Submit</Text>
         </Button>
         
         <Button style = {styles.button}
-        onPress={() => navigate('Login')}>
+          rounded
+          onPress={() => navigate('Login')}>
           <Text style={styles.buttonText}>Back</Text>
         </Button>
 
         <Button style = {styles.button}
-        onPress={() => navigate('AddClassScreen')}>
+          rounded
+          onPress={() => navigate('AddClassScreen')}>
           <Text style={styles.buttonText}>Back</Text>
         </Button>
 
         <Button style = {styles.button}
-        onPress={() => navigate('JoinScreen')}>
+          rounded
+          onPress={() => navigate('Channel')}>
           <Text style={styles.buttonText}>Back</Text>
         </Button>
 
         <Button style = {styles.button}
-        onPress={() => navigate('TestChannel')}>
+          rounded
+          onPress={() => navigate('TestChannel')}>
           <Text style={styles.buttonText}>Back</Text>
         </Button>
       </View>
       </View>
+      //</ScrollView>
       );
   }
 }
@@ -185,8 +190,8 @@ const styles = StyleSheet.create({
    
    button: {
     backgroundColor: '#73B1B7',
-    width: 114,
-    height: 40,
+    width: 80,
+    height: 30,
     marginVertical: 10,
     marginLeft: 100,
     textAlign: 'center',
