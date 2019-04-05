@@ -144,7 +144,7 @@ signupUser = (email, password) => {
 
         <Button style = {styles.button}
           rounded
-          onPress={() => navigate('TestChannel')}>
+          onPress={() => navigate('TestSection')}>
           <Text style={styles.buttonText}>Back</Text>
         </Button>
       </View>

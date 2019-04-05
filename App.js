@@ -10,6 +10,7 @@ import Channels from './src/screens/Channels';
 import AddClassScreen from './src/CrudScreens/AddClassScreen';
 import JoinScreen from './src/CrudScreens/JoinNewChannel/JoinScreen';
 import TestChannel from './src/CrudScreens/TestChannel';
+import TestSection from './src/screens/ClassScreen/TestSection'
 
 
 const Application = createStackNavigator({
@@ -17,6 +18,15 @@ const Application = createStackNavigator({
       screen: Login,
       navigationOptions: {
         title: 'Login',
+        header: null,
+        tabBarVisible: false,
+      }
+    },
+
+    TestSection: {
+      screen: TestSection,
+      navigationOptions: {
+        title: 'TestSection',
         header: null,
         tabBarVisible: false,
       }
