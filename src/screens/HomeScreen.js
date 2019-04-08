@@ -2,36 +2,24 @@ import React from 'react';
 import { StyleSheet, View, Text, SafeAreaView, ScrollView, Dimensions, Image, TouchableOpacity} from 'react-native';
 import { createAppContainer, createDrawerNavigator , createBottomTabNavigator, 
         createSwitchNavigator,createStackNavigator, DrawerItems } from 'react-navigation';
-import Drawer from './Drawer/Drawer';
+// import Drawer from './Drawer/Drawer';
 import Channels from '../screens/Channels';
 // import Settings from '../screens/Settings';
 // import Login from '../screens/Login'
-// import Profile from '../screens/Profile';
+import Profile from '../screens/Profile';
 import {NavigationActions} from 'react-navigation';
 import AddClassScreen from '../CrudScreens/AddClassScreen';
 import Icon from '@expo/vector-icons/Ionicons';
 import { Button } from 'native-base';
 import * as firebase from 'firebase';
-import Login from './Login';
+
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null
 }
 
-  onSignoutPress = () => {
-    //firebase.auth().signOut().then(() => this.props.navigation.navigate('Login'));
-   // onPress = {() => navigate('Login')}
-  }
-
-  // onLogoutPress = () => {
-  // var navActions = NavigationActions.reset({
-  //     index: 0,
-  //     actions: [NavigationActions.navigate({routeName: "Login"})]
-  // });
-  // this.props.navigation.dispatch(navActions);
-
-  // }
+  
 
   render(){
     return <AppContainer />
@@ -63,8 +51,9 @@ export default class HomeScreen extends React.Component {
 
 const TabNavigator = createBottomTabNavigator (
   {
+
    Channels,
-  //  Profile,
+  //  
   //  Settings,
 }, {
   navigationOptions: ({navigation}) => {
@@ -104,16 +93,16 @@ const AppDrawerNavigator = createDrawerNavigator({
     
     },
 
-    // "Logout" : {
-    //   screen: Login,
-    // }
+    "Profile" : {
+      screen: Profile,
+    }
     
    },
-   {
-     contentComponent: Drawer,
-     drawerWidth: 300,
+  //  {
+  //    contentComponent: Drawer,
+  //    drawerWidth: 300,
   
-   }
+  //  }
   ); 
  
   const styles = StyleSheet.create({

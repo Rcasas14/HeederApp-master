@@ -10,11 +10,23 @@ import Channels from './src/screens/Channels';
 import AddClassScreen from './src/CrudScreens/AddClassScreen';
 import JoinScreen from './src/CrudScreens/JoinNewChannel/JoinScreen';
 import TestChannel from './src/CrudScreens/TestChannel';
-import TestSection from './src/screens/ClassScreen/TestSection'
+import TestSection from './src/screens/ClassScreen/TestSection';
+import Profile from './src/screens/Profile';
 
 
 const Application = createStackNavigator({
-    Login: {
+
+// -----------Temporary-----------------
+  Profile: {
+    screen: Profile,
+    navigationOptions: {
+      title: 'Login',
+      header: null,
+      tabBarVisible: false,
+    }
+  },
+// -------------------------
+  Login: {
       screen: Login,
       navigationOptions: {
         title: 'Login',
