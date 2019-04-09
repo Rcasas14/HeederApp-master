@@ -5,7 +5,6 @@ import { createAppContainer, createDrawerNavigator , createBottomTabNavigator,
 // import Drawer from './Drawer/Drawer';
 import Channels from '../screens/Channels';
 // import Settings from '../screens/Settings';
-// import Login from '../screens/Login'
 import Profile from '../screens/Profile';
 import {NavigationActions} from 'react-navigation';
 import AddClassScreen from '../CrudScreens/AddClassScreen';
@@ -53,8 +52,8 @@ const TabNavigator = createBottomTabNavigator (
   {
 
    Channels,
-  //  
-  //  Settings,
+
+   Profile,
 }, {
   navigationOptions: ({navigation}) => {
     const {routeName} = navigation.state.routes[navigation.state.index];
@@ -86,6 +85,10 @@ const AppDrawerNavigator = createDrawerNavigator({
   
     Heeder: {
       screen: AppStackNavigator,
+    },
+
+    Channels: {
+      screen: Channels,
     },
 
     "Add Class" : {

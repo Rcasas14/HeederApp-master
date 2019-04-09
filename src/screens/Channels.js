@@ -21,11 +21,9 @@ export default class Channels extends React.Component {
           <ScrollView style = {styles.scrollview}>
           <View style = {styles.container}>
             <View style = {styles.listStyle}>
-              {/* <Text style = {[{color: '#fff', fontSize: 18,}, styles.boxShadow]}>Class List</Text> */}
-
               <Button transparent
                   style = {styles.boxShadow}
-                  onPress ={() => navigate('TestScreen')}> 
+                  onPress ={() => navigate('Section')}> 
               <Octicons style = {{ marginLeft: 10 ,marginRight: -23}} name = 'primitive-dot' size = {13} color = 'green' /> 
                 <Text style = {styles.boxText}> 
                  Sample Class 1 

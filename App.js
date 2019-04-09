@@ -18,14 +18,6 @@ const Application = createStackNavigator({
 
 // -----------Temporary-----------------
 
-Section: {
-  screen: Section,
-  navigationOptions: {
-    title: 'TestSection',
-    header: null,
-    tabBarVisible: false,
-  }
-},
 
 Login: {
   screen: Login,
@@ -45,7 +37,15 @@ Profile: {
   },
 // -------------------------
 
-    
+Section: {
+  screen: Section,
+  navigationOptions: {
+    title: 'TestSection',
+    header: null,
+    tabBarVisible: false,
+  }
+},    
+
     Channel: {
       screen: Channels,
       navigationOptions: {

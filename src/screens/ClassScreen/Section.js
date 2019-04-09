@@ -4,53 +4,70 @@ import {Button } from 'native-base';
 import * as firebase from 'firebase';
 
 export default class Section extends React.Component {
-    static navigationOptions = {
-       header: null,
-
-      
-    };
-
-    onSignoutPress = () => {
-      firebase.auth().signOut().then(() => this.props.navigation.navigate('Login'));
-     //onPress = {() => navigate('Login')}
-    }
-
     render() {
       const {navigate} = this.props.navigation;
         return (
-       <View style = {{flex: 1,}}>
-          <View  style={style.container}>
-          <View style = {[style.imageContainer, style.ImageFlex]}>
-              <View style = {style.userCont}>
-                <Text style = {style.userText}>Connected</Text>
-                <Text style = {style.userTextEmail}>juan.delacruz123@gmail.com</Text>
-              </View>
-          <View style = {style.buttonSpacing}>     
-            <Button
-              style = {style.buttonStyle}
-              onPress = {this.onSignoutPress}>
-              <Text style = {style.text}>Logout</Text>
-            </Button>
-          </View> 
-        </View>
-      </View>
-      <View style= {style.informationCont}>
-        <View style = {[style.ProfileInfoFlex, style.ProfileInfo]}>
-          <Text style = {{textAlign:'center', fontSize: 20, color: '#fff'}}>Offline</Text>
-        </View> 
-      </View>
+   //<ScrollView style = {styles.scrollCont}>   
+
+    <View style = {styles.overallCont}>
+      <View  style={styles.container}>
+        <View style = {[styles.conContainer, styles.connectFlex]}>
+            <View style = {styles.userCont}>
+              <Text style = {styles.userText}>Connected</Text>
+              {/* <Text style = {styles.userTextEmail}>juan.delacruz123@gmail.com</Text> */}
+            </View>
+            </View>
        </View>
-      
-      
+
+        <View style= {styles.informationCont}>
+            <View style = {[styles.ProfileInfoFlex, styles.ProfileInfo]}>
+              <Text style = {{textAlign:'center', fontSize: 20, color: '#fff'}}>Offline</Text>
+            </View> 
+        </View>
+    
+
+      <View style = {styles.liveCont}>
+        <View style = {{flex: 1, alignItems:'stretch'}}>
+          <Button block style = {styles.liveButton}>
+          <Text style = {{color:'#ffffee', fontSize: 25}}>Start Live</Text>
+        </Button>
+       </View>
+      </View>
+      </View>
+
+     // </ScrollView>
         );
     }
 }
-const style = StyleSheet.create ({
-  container: {
+const styles = StyleSheet.create ({
+  
+  scrollCont:{
+    paddingLeft: 15,
+    backgroundColor: '#35586C',
+  },
+  
+  overallCont:{
     flex: 1,
-    paddingTop: 65,
     flexDirection: 'column',
-    backgroundColor: '#ffeee4',      
+  },
+
+  liveCont:{
+    flex: 1,
+    alignItems: 'stretch',
+    flexDirection: 'column',
+    backgroundColor: '#fff',
+  },
+
+  liveButton:{
+    backgroundColor: 'darkgray',
+  },
+  
+  
+  container: {
+    flex: 11,
+    paddingTop: 25,
+    flexDirection: 'column',
+    backgroundColor: '#35586C',     
   },
   text : {
     fontSize: 18,
@@ -63,27 +80,26 @@ const style = StyleSheet.create ({
       borderRadius: 150/2,
 
   },
-  imageContainer: {
+  conContainer: {
       flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
+      alignItems: 'flex-start',
   },
-  ImageFlex: {
+  connectFlex: {
       flex: 1,
       
   },
 
   userCont: {
-      alignItems: 'center',
-      justifyContent: 'center',
+      alignItems: 'flex-start',
+      
   },
   userText: {
-      color: '#000',
+      color: '#fff',
       fontSize: 20,
       paddingTop: 20,
   },
   userTextEmail: {
-    color: 'rgba(0,0,0, 0.6)',
+    color: 'rgba(255,255,255, 0.6)',
     fontSize: 15,
   },
   buttonSpacing: {
@@ -106,9 +122,10 @@ const style = StyleSheet.create ({
   },
 
   informationCont: {
-      flex: 1,
+      flex: 7,
       flexDirection:'column',
-      backgroundColor: '#35586C',  
+      backgroundColor: '#35586C',
+        
        
   },
   ProfileInfo: {
