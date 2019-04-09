@@ -38,7 +38,7 @@ export default class Profile extends React.Component {
       </View>
       <View style= {ProfileStyles.informationCont}>
         <View style = {[ProfileStyles.ProfileInfoFlex, ProfileStyles.ProfileInfo]}>
-          <Text style = {{textAlign:'center', fontSize: 20,}}>Info</Text>
+          <Text style = {{textAlign:'center', fontSize: 20, color: '#fff'}}>Info</Text>
         </View> 
       </View>
        </View>

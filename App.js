@@ -17,7 +17,27 @@ import Profile from './src/screens/Profile';
 const Application = createStackNavigator({
 
 // -----------Temporary-----------------
-  Profile: {
+Channel: {
+  screen: Channels,
+  navigationOptions: {
+    title: 'Channels',
+    header: null,
+    tabBarVisible: false,
+    headerStyle: {
+      backgroundColor: '#35586C',
+    }
+  }
+},
+
+Login: {
+  screen: Login,
+  navigationOptions: {
+    title: 'Login',
+    header: null,
+    tabBarVisible: false,
+  }
+},  
+Profile: {
     screen: Profile,
     navigationOptions: {
       title: 'Login',
@@ -26,14 +46,7 @@ const Application = createStackNavigator({
     }
   },
 // -------------------------
-  Login: {
-      screen: Login,
-      navigationOptions: {
-        title: 'Login',
-        header: null,
-        tabBarVisible: false,
-      }
-    },
+  
 
     TestSection: {
       screen: TestSection,
@@ -80,17 +93,7 @@ const Application = createStackNavigator({
       }
     },
     
-    Channel: {
-      screen: Channels,
-      navigationOptions: {
-        title: 'Channels',
-        header: null,
-        tabBarVisible: false,
-        headerStyle: {
-          backgroundColor: '#35586C',
-        }
-      }
-    },
+  
  
     HomeScreen: {
       screen: HomeScreen,

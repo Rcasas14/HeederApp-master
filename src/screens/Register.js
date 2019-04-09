@@ -130,7 +130,7 @@ signupUser = (email, password) => {
           <Text style={styles.buttonText}>Back</Text>
         </Button>
 
-        <Button style = {styles.button}
+        {/* <Button style = {styles.button}
           rounded
           onPress={() => navigate('AddClassScreen')}>
           <Text style={styles.buttonText}>Back</Text>
@@ -146,7 +146,7 @@ signupUser = (email, password) => {
           rounded
           onPress={() => navigate('TestSection')}>
           <Text style={styles.buttonText}>Back</Text>
-        </Button>
+        </Button> */}
       </View>
       </View>
       //</ScrollView>

@@ -17,7 +17,7 @@ export default class Channels extends React.Component {
       const {navigate} = this.props.navigation;
     
         return (
-          <ScrollView style = {styles.container}>
+          <View style = {styles.container}>
             {/* <Text>Channel</Text>
             <Button title= "Logout"
             onPress ={() => firebase.auth().signOut()
@@ -28,26 +28,23 @@ export default class Channels extends React.Component {
             </Button> */}
             
 
+          
             <View style = {styles.listStyle}>
+              {/* <Text style = {[{color: '#fff', fontSize: 18,}, styles.boxShadow]}>Class List</Text> */}
 
-            
-              <Text style = {{color: '#fff', fontSize: 18,}}>Class List</Text>
-
-            <Button rounded
-            
-            onPress ={() => navigate('TestScreen')}
-            >
-              <Text style = {{color: '#fff', fontSize: 12, marginLeft: 5}}>Sample Class 1</Text>
-            </Button>
-            <Button transparent>
-              <Text style = {{color: '#fff', fontSize: 12, marginLeft: 5}}>Sample Class 1</Text>
+              <Button transparent
+                  style = {styles.boxShadow}
+                  onPress ={() => navigate('TestScreen')}>
+                <Text style = {styles.boxText}>Sample Class 1</Text>
               </Button>
-            <Button transparent>
-              <Text style = {{color: '#fff', fontSize: 12, marginLeft: 5}}>Sample Class 1</Text>
+              <Button transparent style = {styles.boxShadow}>
+                <Text style = {styles.boxText}>Sample Class 1</Text>
+              </Button>
+            < Button transparent style = {styles.boxShadow}>
+                <Text style = {styles.boxText}>Sample Class 1</Text>
               </Button>
             </View>
-            
-          </ScrollView>
+          </View>
         );
     }
 }
@@ -61,6 +58,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 'auto',
     paddingTop: 35,
+    alignItems: 'stretch',
 },
   text : {
     alignItems: 'center',
@@ -73,13 +71,32 @@ const styles = StyleSheet.create({
 
   listStyle:{
     flex: 1,
-    paddingLeft: 20,
-    paddingTop: 20,
-    backgroundColor: 'rgba(45, 45, 42, 0.8)',
-    marginLeft: 15,
-    marginRight: 15,
     flexDirection: 'column',
     alignItems: 'stretch',
-    height: 450,
+    //justifyContent: 'center',
+  },
+  boxShadow: {
+    backgroundColor: '#fff',
+    shadowColor: "#fff",
+    shadowOffset: {
+	    width: 0,
+	    height: 1,
+    },
+    shadowOpacity: 0.18,
+    shadowRadius: 1.00,
+    elevation: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 60,
+    margin: 20,
+  },
+
+  boxText:{
+    color: '#000', 
+    fontSize: 12, 
+    marginLeft: 5, 
+    flex: 1,
+    alignItems: 'center',
   }
+
 });
