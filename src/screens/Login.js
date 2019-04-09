@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {StyleSheet, View, Text, Image, Alert} from 'react-native';
 import {Button, Form, Item, Input, floatingLabel, rounded, Label} from 'native-base';
+
 import * as firebase from 'firebase';
 
 

@@ -10,22 +10,20 @@ import Channels from './src/screens/Channels';
 import AddClassScreen from './src/CrudScreens/AddClassScreen';
 import JoinScreen from './src/CrudScreens/JoinNewChannel/JoinScreen';
 import TestChannel from './src/CrudScreens/TestChannel';
-import TestSection from './src/screens/ClassScreen/TestSection';
+import Section from './src/screens/ClassScreen/Section';
 import Profile from './src/screens/Profile';
 
 
 const Application = createStackNavigator({
 
 // -----------Temporary-----------------
-Channel: {
-  screen: Channels,
+
+Section: {
+  screen: Section,
   navigationOptions: {
-    title: 'Channels',
+    title: 'TestSection',
     header: null,
     tabBarVisible: false,
-    headerStyle: {
-      backgroundColor: '#35586C',
-    }
   }
 },
 
@@ -46,17 +44,19 @@ Profile: {
     }
   },
 // -------------------------
-  
 
-    TestSection: {
-      screen: TestSection,
+    
+    Channel: {
+      screen: Channels,
       navigationOptions: {
-        title: 'TestSection',
+        title: 'Channels',
         header: null,
         tabBarVisible: false,
+        headerStyle: {
+          backgroundColor: '#35586C',
+        }
       }
     },
-
     TestChannel: {
       screen: TestChannel,
       navigationOptions: {
