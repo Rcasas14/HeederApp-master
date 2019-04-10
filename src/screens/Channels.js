@@ -8,7 +8,8 @@ import * as firebase from 'firebase';
 
 export default class Channels extends React.Component {
     static navigationOptions = {
-      header: null
+      header: null,
+      tabBarVisible: false,
     };
 
   onSignoutPress = () => {

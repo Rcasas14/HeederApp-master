@@ -24,15 +24,14 @@ Login: {
   navigationOptions: {
     title: 'Login',
     header: null,
-    tabBarVisible: false,
+    
   }
 },  
 Profile: {
     screen: Profile,
     navigationOptions: {
       title: 'Login',
-      header: null,
-      tabBarVisible: false,
+      header: null
     }
   },
 // -------------------------
@@ -40,29 +39,25 @@ Profile: {
 Section: {
   screen: Section,
   navigationOptions: {
-    title: 'TestSection',
+  }
+},
+
+Channel: {
+  screen: Channels,
+  navigationOptions: {
+    title: 'Channels',
     header: null,
-    tabBarVisible: false,
+    headerStyle: {
+      backgroundColor: '#35586C',
+    }
   }
 },    
 
-    Channel: {
-      screen: Channels,
-      navigationOptions: {
-        title: 'Channels',
-        header: null,
-        tabBarVisible: false,
-        headerStyle: {
-          backgroundColor: '#35586C',
-        }
-      }
-    },
     TestChannel: {
       screen: TestChannel,
       navigationOptions: {
         title: 'TestChannel',
         header: null,
-        tabBarVisible: false,
       }
     },
 
@@ -71,7 +66,6 @@ Section: {
       navigationOptions: {
         title: 'AddClassScreen',
         header: null,
-        tabBarVisible: false,
       }
     },
 
@@ -80,7 +74,6 @@ Section: {
       navigationOptions: {
         title: 'JoinScreen',
         header: null,
-        tabBarVisible: false,
       }
     },
 
@@ -89,7 +82,6 @@ Section: {
       navigationOptions: {
         title: 'Register',
         header: null,
-        tabBarVisible: false,
       }
     },
     
@@ -100,7 +92,6 @@ Section: {
       navigationOptions: {
         title: 'Home',
         header: null,
-        tabBarVisible: false,
       }
     },
     
@@ -158,7 +149,7 @@ export default class App extends React.Component {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#000',
     },
     statusBarUnderlay: {
       height: 24,

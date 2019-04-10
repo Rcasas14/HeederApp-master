@@ -41,12 +41,20 @@ render(){
         //confirm button to add new channel in crud (add function here)
         transparent
         //temporray navigation
-        onPress = {() => navigate('Channel')}
+            // onPress = {() => navigate('Channels')}
         //this channel name will navigate to the newly created channel
         >
         <Text style={{color:'#fff',}}>Confirm</Text>
         </Button>
-
+        <Button style = {styles.button}
+        //confirm button to add new channel in crud (add function here)
+        transparent
+        //temporray navigation
+            onPress = {() => navigate('Channels')}
+        //this channel name will navigate to the newly created channel
+        >
+        <Text style={{color:'#fff',}}>Back</Text>
+        </Button>
     </View>
     )
  }

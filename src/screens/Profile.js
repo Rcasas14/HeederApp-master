@@ -5,11 +5,10 @@ import * as firebase from 'firebase';
 import ProfileStyles from './../styles/ProfileStyles';
 
 export default class Profile extends React.Component {
-    static navigationOptions = {
-       header: null,
-
-      
-    };
+  static navigationOptions = {
+    header: null,
+    tabBarVisible: false,
+  };
 
     onSignoutPress = () => {
       firebase.auth().signOut().then(() => this.props.navigation.navigate('Login'));

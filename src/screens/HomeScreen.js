@@ -15,7 +15,7 @@ import * as firebase from 'firebase';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    header: null
+    header: null,
 }
 
   
@@ -54,6 +54,8 @@ const TabNavigator = createBottomTabNavigator (
    Channels,
 
    Profile,
+
+   AddClassScreen,
 }, {
   navigationOptions: ({navigation}) => {
     const {routeName} = navigation.state.routes[navigation.state.index];
@@ -68,7 +70,7 @@ const TabNavigator = createBottomTabNavigator (
 })
 
 const AppStackNavigator = createStackNavigator ({
-  TabNavigator: TabNavigator 
+  TabNavigator: TabNavigator
 },{
   defaultNavigationOptions:({navigation}) => {
     return{
@@ -81,6 +83,16 @@ const AppStackNavigator = createStackNavigator ({
   }
   });
 
+  AppStackNavigator.navigationOptions = ({ navigation }) => {
+    let tabBarVisible = true;
+    if (navigation.state.index > 0) {
+       tabBarVisible = false;
+    }
+    return {
+       tabBarVisible
+    };
+  };
+
 const AppDrawerNavigator = createDrawerNavigator({
   
     Heeder: {
@@ -88,11 +100,14 @@ const AppDrawerNavigator = createDrawerNavigator({
     },
 
     Channels: {
-      screen: Channels,
+     
+      screen: Channels, 
+      
     },
 
     "Add Class" : {
       screen: AddClassScreen,
+      
     
     },
 
@@ -129,7 +144,7 @@ const AppDrawerNavigator = createDrawerNavigator({
 const AppSwitchNavigator = createSwitchNavigator({
   Home: { 
     screen: AppDrawerNavigator,
-    header: null, 
+    header: null,
   },
  
 })
