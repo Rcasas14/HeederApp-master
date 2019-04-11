@@ -130,13 +130,13 @@ signupUser = (email, password) => {
           <Text style={styles.buttonText}>Back</Text>
         </Button>
 
-        {/* <Button style = {styles.button}
+        <Button style = {styles.button}
           rounded
-          onPress={() => navigate('AddClassScreen')}>
+          onPress={() => navigate('Section')}>
           <Text style={styles.buttonText}>Back</Text>
         </Button>
 
-        <Button style = {styles.button}
+        {/*<Button style = {styles.button}
           rounded
           onPress={() => navigate('Channel')}>
           <Text style={styles.buttonText}>Back</Text>

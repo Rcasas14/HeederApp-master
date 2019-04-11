@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       paddingLeft: 50,
-      paddingRight: 50
+      paddingRight: 50,
     },
     logoContainer: {
       alignItems: 'center',

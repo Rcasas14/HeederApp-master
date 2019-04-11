@@ -9,7 +9,9 @@ import {Button } from 'native-base';
 import {Octicons} from '@expo/vector-icons';
 import * as firebase from 'firebase';
 import Ionicons from '@expo/vector-icons/Ionicons';
-export default class Section extends React.Component {
+
+
+export default class StudSection extends React.Component {
   
   static navigationOptions = {
     title: 'Sample Class',
@@ -82,7 +84,7 @@ export default class Section extends React.Component {
       < View style = {styles.liveCont}>
           <View style = {{flex: 1, alignItems:'stretch'}}>
             <Button block style = {styles.liveButton}>
-            <Text style = {{color:'#000', fontSize: 17}}>START LIVE</Text>
+            <Text style = {{color:'#000', fontSize: 17}}>----</Text>
           </Button>
         </View>
         </View>
